@@ -1,4 +1,4 @@
-﻿// reference parameter
+﻿//output parameter
 
 using System;
 
@@ -6,13 +6,13 @@ class Program
 {
     static void Main()
     {
-        int x = 10;
-        ModifyValue(ref x);
-        Console.WriteLine("Value after method call: " + x);  // Output: 20
+        int result;
+        bool success = TryParse("123", out result);
+        Console.WriteLine("Parsing success: " + success + ", Result: " + result);  // Output: Parsing success: True, Result: 123
     }
 
-    static void ModifyValue(ref int a)
+    static bool TryParse(string input, out int number)
     {
-        a = 20;
+        return int.TryParse(input, out number);
     }
 }
