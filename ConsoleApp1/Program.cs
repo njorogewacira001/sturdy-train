@@ -1,19 +1,18 @@
-﻿// parameter Array
-
-using System;
+﻿using System;
 
 class Program
 {
     static void Main()
     {
-        PrintNumbers(1, 2, 3, 4, 5);
+        PrintMessage("Hello");
+        PrintMessage("Hello", 3);
     }
 
-    static void PrintNumbers(params int[] numbers)
+    static void PrintMessage(string message, int repeat = 1)
     {
-        foreach (int number in numbers)
+        for (int i = 0; i < repeat; i++)
         {
-            Console.WriteLine(number);
+            Console.WriteLine(message);
         }
     }
 }
