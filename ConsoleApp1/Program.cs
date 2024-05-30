@@ -1,4 +1,4 @@
-﻿//output parameter
+﻿// parameter Array
 
 using System;
 
@@ -6,13 +6,14 @@ class Program
 {
     static void Main()
     {
-        int result;
-        bool success = TryParse("123", out result);
-        Console.WriteLine("Parsing success: " + success + ", Result: " + result);  // Output: Parsing success: True, Result: 123
+        PrintNumbers(1, 2, 3, 4, 5);
     }
 
-    static bool TryParse(string input, out int number)
+    static void PrintNumbers(params int[] numbers)
     {
-        return int.TryParse(input, out number);
+        foreach (int number in numbers)
+        {
+            Console.WriteLine(number);
+        }
     }
 }
